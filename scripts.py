@@ -39,7 +39,7 @@ def add_attraction(destination, attraction):
     except SyntaxError:
         return SyntaxError
 
-# Call function and then print updated list
+# Call function with destination and attraction parameters and then print the updated list
 add_attraction("Los Angeles, USA", ['Venice Beach', ['beach']])
 add_attraction("Paris, France", ["the Louvre", ["art", "museum"]])
 add_attraction("Paris, France", ["Arc de Triomphe", ["historical site", "monument"]])
