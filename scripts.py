@@ -39,7 +39,7 @@ def add_attraction(destination, attraction):
     except SyntaxError:
         return SyntaxError
 
-# Call function with destination and attraction parameters and then print the updated list
+# Call function with destination and attraction parameters THEN print the updated list
 add_attraction("Los Angeles, USA", ['Venice Beach', ['beach']])
 add_attraction("Paris, France", ["the Louvre", ["art", "museum"]])
 add_attraction("Paris, France", ["Arc de Triomphe", ["historical site", "monument"]])
@@ -52,3 +52,30 @@ add_attraction("São Paulo, Brazil", ["Pátio do Colégio", ["historical site"]]
 add_attraction("Cairo, Egypt", ["Pyramids of Giza", ["monument", "historical site"]])
 add_attraction("Cairo, Egypt", ["Egyptian Museum", ["museum"]])
 print(attractions)
+
+
+
+# Interest finder
+def find_attractions(destination, interests):
+    destination_index = get_destination_index(destination)
+    attractions_in_city = attractions[destination_index]
+
+    attractions_with_interest = []
+
+    for attraction in attractions_in_city:
+        possible_attraction = attraction
+        attraction_tags = attraction[1]
+
+        for interest in interests:
+            if interest in attraction_tags:
+                attractions_with_interest.append(possible_attraction)
+    return attractions_with_interest
+
+
+saoPaulo_history = find_attractions("São Paulo, Brazil", ["historical site"])
+print(saoPaulo_history)
+
+
+
+
+
